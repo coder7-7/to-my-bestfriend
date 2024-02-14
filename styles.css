@@ -1,0 +1,103 @@
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #e5ccc9;
+}
+
+.container {
+    position: relative;
+}
+
+.valentines {
+    position: relative;
+    top: 50px;
+    cursor: pointer;
+    animation: up 3s linear infinite;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #8C2923;
+    display: grid;
+    place-items: center;
+}
+
+.envelope::before {
+    content: '';
+    position: absolute;
+    width: 212px;
+    height: 212px;
+    background: #8C2923;
+    transform: rotate(45deg);
+    top: -105px;
+    left: 44px;
+    border-radius: 30px 0 0 0;
+}
+
+.front {
+    position: absolute;
+    border-right: 180px solid #8C2923;
+    border-top: 95px solid transparent;
+    border-bottom: 100px solid transparent;
+    left: 120px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.front::before {
+    position: absolute;
+    content: '';
+    border-left: 300px solid #8C2923;
+    border-top: 195px solid transparent;
+    left: -120px;
+    top: -95px;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 180px;
+    background: #faf0e6;
+    border-radius: 2px;
+    display: grid;
+    place-items: center;
+    transition: 1s;
+    padding-left: 20px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 2px solid #8C2923;
+    border-style: dashed;
+    padding-left: 20px;
+}
+
+.valentines:hover .card {
+    transform: translateY(-135px);
+}
+
+.card.text {
+    font-family: 'cursive';
+    font-size: 15px;
+    text-align: center;
+    line-height: 25px;
+    color: #000000;
+}
+@keyframes up{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-30px);
+    }
+}
